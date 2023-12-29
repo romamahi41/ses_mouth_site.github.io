@@ -1,0 +1,66 @@
+{% extends "siteApp/base.html" %}
+{% block content%}
+<!-- 検索欄、入力ボタンエリア -->
+<form id="form1" action="http://127.0.0.1:8000/" method="get">
+  <p class="centered-text"><input id="sbox1" id="s" type="text" style="width:500px; height: 40px;" placeholder="調べたい企業">
+  <input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="企業検索"></p>
+</form>
+
+<br>
+<!-- 詳細検索エリア -->
+<table border="1" bgcolor="#b3e0f2" style="margin: 0 auto; width:604px; height:50px;">
+  <!-- 職種 -->
+  <tr>
+    <th>職種</th>
+    <th><input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="HLボタン(仮)"></p>
+    </th>
+  </tr>
+
+  <!-- 本社所在地 -->
+  <tr>
+    <th>本社所在地</th>
+    <th><input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="HLボタン(仮)"></p>
+    </th>
+  </tr>
+
+  <!-- 資本金 -->
+  <tr>
+    <th>資本金</th>
+    <th><input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="HLボタン(仮)"></p>
+    </th>
+  </tr>
+
+  <!-- 従業員数 -->
+  <tr>
+    <th>従業員数</th>
+    <th><input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="HLボタン(仮)"></p>
+    </th>
+  </tr>
+
+  <!-- 設立年月 -->
+  <tr>
+    <th>設立年月</th>
+    <th><input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="HLボタン(仮)">
+    </th>
+
+</table>
+<div style="text-align: center;">
+  <!-- 企業詳細検索ボタン -->
+  <input id="sbtn1" type="submit" style="width:100px; height: 40px;" value="企業検索">
+</div>
+</tr>
+
+
+
+<div class="posts-container">
+  {% for post in posts %}
+  <div class="post block">
+    <h2 class="subtitle">{{post.title}}</h2>
+    <small>Posted at {{post.posted_date}}</small>
+    <p>{{post.intro}}</p>
+    <a href="{% url 'post_detail' post.slug %}">もっと読む</a>
+    <hr>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

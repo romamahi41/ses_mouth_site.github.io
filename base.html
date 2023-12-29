@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .centered-text {
+      text-align: center;
+    }
+
+    .posts-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .post {
+      width: 300px;
+      /* 任意の横幅を指定 */
+      margin: 10px;
+      /* 適切なマージンを指定 */
+    }
+
+    #header_menu {
+      display: block;
+      position: fixed;
+      /*ポジションを固定する*/
+      top: 0px;
+      /*一番上に設置*/
+      left: 0px;
+      z-index: 9999;
+      /*どの要素よりも上にくるように*/
+      background-color: rgba(110, 169, 36, 0.78);
+      /*メニューバー背景色*/
+      width: 100%;
+      /*横幅を100%に*/
+      padding: 0 0;
+    }
+
+    #header_menu a {
+      float: left;
+      /*メニューを横並びにする*/
+      font-size: 16px;
+      color: #FFF;
+      padding: 10px;
+    }
+
+    #header_menu a:after {
+      /*floatでデザインが崩れないように*/
+      display: block;
+      clear: both;
+      content: "";
+    }
+
+    .hidden-menu-item {
+      display: none;
+    }
+  </style>
+  <title>SES口コミサイト</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <div id="header_menu">
+    <a href="URL">Home</a>
+    <a href="URL">About</a>
+    <a href="URL">Company</a>
+    <a href="URL">Recruit</a>
+  </div>
+
+</head>
+<body>
+  <nav class="navbar is-danger">
+    <div class="navbar-brand">
+      <a href="/" class="navbar-item">
+        <strong>~SES口コミサイト~</strong>
+      </a>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">{% block content %} {% endblock %}</div>
+  </section>
+</body>
+</html>
